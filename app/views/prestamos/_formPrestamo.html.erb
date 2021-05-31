@@ -1,0 +1,10 @@
+<h2> Prestamos </h2>
+  
+<form action="/realizarConsulta" method="get">
+    <select name="usuario">
+        <% @usuarios.each do |usuario| %>
+         <option value="<%= usuario.id %>"> <%= usuario.nombres %> </option>
+        <% end %>
+    </select>
+    <input type="submit" value="consultar">
+</form>

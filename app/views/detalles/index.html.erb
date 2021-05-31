@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<p id="notice"><%= notice %></p>
+
+<h1>Detalles</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Cantidad</th>
+      <th>Prestamo</th>
+      <th>Libro</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @detalles.each do |detalle| %>
+      <tr>
+        <td><%= detalle.cantidad %></td>
+        <td><%= detalle.Prestamo.fecha %></td>
+        <td><%= detalle.Libro.titulo %></td>
+        <td><%= link_to 'Show', detalle %></td>
+        <td><%= link_to 'Edit', edit_detalle_path(detalle) %></td>
+        <td><%= link_to 'Destroy', detalle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Detalle', new_detalle_path %>
